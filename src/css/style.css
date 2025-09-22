@@ -7,10 +7,16 @@ body {
 .topnav {
     background-color: #372E2E;
     overflow: hidden;
-    border-bottom: 2px solid;
-    border-color: #564247;
-    justify-content: space-between;
+    border-bottom: 2px solid #564247;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topnav-left {
+    display: flex;
+    align-items: center;
+    gap: 1px;
 }
 
 .topnav a {
@@ -45,4 +51,36 @@ body {
       'opsz' 24;
     font-size: 22px;
     line-height: 1;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #2d2525;
+    border-radius: 50px;
+    height: 32px;
+    padding: 0 10px;
+    color: #FFD9D7;
+}
+
+.search-box .search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #FFD9D7;
+    color: #2d2525;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #FFD9D7;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
 }
