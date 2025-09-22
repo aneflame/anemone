@@ -17,7 +17,8 @@ body {
     display: flex;
     float: left;
     color: #FFD9D7;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
@@ -26,6 +27,14 @@ body {
 
 .topnav-right {
     float: right;
+}
+
+.topnav a.iconWeather {
+    padding: 14px 0px;
+}
+
+.topnav a.iconMusic {
+    padding: 14px 0px 0px 19px;
 }
 
 .material-symbols-outlined {
