@@ -4,7 +4,8 @@ body {
     background-color: #735252;
 }
 
-.topnav, .topnav * {
+.topnav,
+.topnav * {
     user-select: none;
 }
 
@@ -57,19 +58,21 @@ body {
 .topnav-right a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
 .topnav-right a.active {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 .material-symbols-outlined {
     font-variation-settings:
-      'FILL' 0,
-      'wght' 400,
-      'GRAD' 0,
-      'opsz' 24;
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
     font-size: 22px;
     line-height: 1;
 }
+
 .search-box {
     display: flex;
     align-items: center;
