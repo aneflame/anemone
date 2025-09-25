@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    
+    <script src="../js/topNavIcons.js" defer></script>
 
     <title>Anemone</title>
 </head>
@@ -38,37 +40,6 @@
     </div>
     <div id="weatherPopup" style="display:none; background:#2d2525; color:white; padding:20px;">Weather content...</div>
     <div id="appsPopup" style="display:none; background:#2d2525; color:white; padding:20px;">Apps content...</div>
-    <script>
-        const icons = document.querySelectorAll('.topnav-right a');
-        let activePopup = null;
-
-        icons.forEach(icon => {
-            icon.addEventListener('click', () => {
-                // Якщо вже активний цей же елемент → вимикаємо
-                if (icon.classList.contains('active')) {
-                    icon.classList.remove('active');
-                    if (activePopup) activePopup.style.display = 'none';
-                    activePopup = null;
-                    return;
-                }
-
-                // Інакше вимикаємо всі інші
-                icons.forEach(i => i.classList.remove('active'));
-                if (activePopup) activePopup.style.display = 'none';
-
-                // Активуємо новий
-                icon.classList.add('active');
-                const popupId = icon.dataset.popup;
-                if (popupId) {
-                    const popup = document.getElementById(popupId);
-                    if (popup) {
-                        popup.style.display = 'block';
-                        activePopup = popup;
-                    }
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
