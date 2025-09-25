@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Roboto', monospace;
     background-color: #735252;
+    min-height: 100vh;
 }
 
 .topnav,
