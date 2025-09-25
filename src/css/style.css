@@ -22,7 +22,6 @@ body {
 .topnav-left {
     display: flex;
     align-items: center;
-    gap: 8px;
 }
 
 .topnav a {
