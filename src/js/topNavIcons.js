@@ -1,29 +1,29 @@
 const icons = document.querySelectorAll('.topnav-right a');
-        let activePopup = null;
+let activePopup = null;
 
-        icons.forEach(icon => {
-            icon.addEventListener('click', () => {
-                // Якщо вже активний цей же елемент → вимикаємо
-                if (icon.classList.contains('active')) {
-                    icon.classList.remove('active');
-                    if (activePopup) activePopup.style.display = 'none';
-                    activePopup = null;
-                    return;
-                }
+icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        // 1
+        if (icon.classList.contains('active')) {
+            icon.classList.remove('active');
+            if (activePopup) activePopup.style.display = 'none';
+            activePopup = null;
+            return;
+        }
 
-                // Інакше вимикаємо всі інші
-                icons.forEach(i => i.classList.remove('active'));
-                if (activePopup) activePopup.style.display = 'none';
+        // 2
+        icons.forEach(i => i.classList.remove('active'));
+        if (activePopup) activePopup.style.display = 'none';
 
-                // Активуємо новий
-                icon.classList.add('active');
-                const popupId = icon.dataset.popup;
-                if (popupId) {
-                    const popup = document.getElementById(popupId);
-                    if (popup) {
-                        popup.style.display = 'block';
-                        activePopup = popup;
-                    }
-                }
-            });
-        });
+        // 3
+        icon.classList.add('active');
+        const popupId = icon.dataset.popup;
+        if (popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                popup.style.display = 'block';
+                activePopup = popup;
+            }
+        }
+    });
+});
