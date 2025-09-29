@@ -3,27 +3,23 @@ let activePopup = null;
 
 icons.forEach(icon => {
     icon.addEventListener('click', () => {
-        // 1
+        const popupId = icon.dataset.popup;
+        const popup = popupId ? document.getElementById(popupId) : null;
+
         if (icon.classList.contains('active')) {
             icon.classList.remove('active');
-            if (activePopup) activePopup.style.display = 'none';
+            if (activePopup) activePopup.classList.remove('active');
             activePopup = null;
             return;
         }
 
-        // 2
         icons.forEach(i => i.classList.remove('active'));
-        if (activePopup) activePopup.style.display = 'none';
+        if (activePopup) activePopup.classList.remove('active');
 
-        // 3
         icon.classList.add('active');
-        const popupId = icon.dataset.popup;
-        if (popupId) {
-            const popup = document.getElementById(popupId);
-            if (popup) {
-                popup.style.display = 'block';
-                activePopup = popup;
-            }
+        if (popup) {
+            popup.classList.add('active');
+            activePopup = popup;
         }
     });
 });
