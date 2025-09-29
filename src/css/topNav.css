@@ -1,0 +1,175 @@
+.topnav,
+.topnav * {
+    user-select: none;
+}
+
+.topnav {
+    background-color: #372E2E;
+    border-bottom: 2px solid #564247;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    height: 56px;
+}
+
+.topnav-left {
+    display: flex;
+    align-items: center;
+}
+
+.topnav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD9D7;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    padding: 14px 16px;
+}
+
+.topnav-right {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.topnav-right a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #FFD9D7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.topnav-right a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.topnav-right a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #2d2525;
+    border-radius: 50px;
+    height: 32px;
+    padding: 0 10px;
+    color: #FFD9D7;
+}
+
+.search-box .search-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #FFD9D7;
+    color: #2d2525;
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #FFD9D7;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+}
+
+#appsPopup {
+    position: absolute;
+    top: 63px;
+    right: 6px;
+    background: #372E2E;
+    border-radius: 99px;
+    padding: 10px 20px;
+    z-index: 999;
+    border: 2px solid #564247;
+
+    transform-origin: top right;
+    transform: scale(0.1);
+    opacity: 0;
+    visibility: hidden;
+
+    transition: transform 0.3s cubic-bezier(0.4, 1.3, 0.6, 1),
+                opacity 0.25s ease,
+                visibility 0s linear 0.3s;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+#appsPopup,
+#appsPopup * {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Edge */
+}
+
+#appsPopup.active {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.3s cubic-bezier(0.4, 1.3, 0.6, 1),
+                opacity 0.2s ease,
+                visibility 0s linear 0s;
+    pointer-events: auto;
+}
+
+#appsPopup .popup-content {
+    display: flex;
+    gap: 20px;
+}
+
+#appsPopup .popup-content .shape-container {
+    width: 35px;
+    height: 35px;
+    background: #FFD9D7;
+    color: #372E2E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    transition: border-radius 0.3s ease, clip-path 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+#appsPopup .popup-content .music-shape {
+    border-radius: 8px;
+}
+
+#appsPopup .popup-content .settings-shape {
+    border-radius: 24px 8px 24px 8px;
+}
+
+#appsPopup .popup-content .shape-container:hover {
+    border-radius: 50%;
+    transform: scale(1.05);
+}
+
+#appsPopup .popup-content .shape-container.squircle-morph {
+    clip-path: path("M 0,8 Q 0,0 8,0 L 27,0 Q 35,0 35,8 L 35,27 Q 35,35 27,35 L 8,35 Q 0,35 0,27 Z"); /* SVG squircle 35x35px */
+    border-radius: 12px;
+}
+
+/* Fallback for browsers without clip-path */
+@supports not (clip-path: path("M 0,8 Q 0,0 8,0 L 27,0 Q 35,0 35,8 L 35,27 Q 35,35 27,35 L 8,35 Q 0,35 0,27 Z")) {
+    #appsPopup .popup-content .shape-container.squircle-morph {
+        border-radius: 20px;
+    }
+}
