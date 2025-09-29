@@ -27,7 +27,7 @@ icons.forEach(icon => {
 const shapeContainers = document.querySelectorAll('#appsPopup .shape-container');
 shapeContainers.forEach(container => {
     container.addEventListener('click', (e) => {
-        e.preventDefault(); // href block
+        // e.preventDefault(); // href block
         container.classList.add('squircle-morph');
         setTimeout(() => {
             container.classList.remove('squircle-morph');
@@ -44,5 +44,17 @@ document.addEventListener('click', (e) => {
         activePopup.classList.remove('active');
         document.querySelector('.topnav-right a.active')?.classList.remove('active');
         activePopup = null;
+    }
+});
+
+const searchBox = document.querySelector('.search-box');
+const searchInput = document.querySelector('#searchInput');
+
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        searchBox.classList.add('active-border');
+        setTimeout(() => {
+            searchBox.classList.remove('active-border');
+        }, 80);
     }
 });
