@@ -31,6 +31,18 @@ shapeContainers.forEach(container => {
         container.classList.add('squircle-morph');
         setTimeout(() => {
             container.classList.remove('squircle-morph');
-        }, 300); // Squircle
+        }, 300); // squircle
     });
+});
+
+// close pop-up when clicking outside it
+document.addEventListener('click', (e) => {
+    if (!activePopup) return;
+    const isClickInsidePopup = activePopup.contains(e.target);
+    const isClickOnTrigger = document.querySelector('.iconApps').contains(e.target);
+    if (!isClickInsidePopup && !isClickOnTrigger) {
+        activePopup.classList.remove('active');
+        document.querySelector('.topnav-right a.active')?.classList.remove('active');
+        activePopup = null;
+    }
 });
