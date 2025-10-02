@@ -5,6 +5,22 @@ body {
     min-height: 100vh;
 }
 
+body.page-transition-fade {
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+body.page-transition-fade.loaded {
+    opacity: 1;
+    transform: scale(1);
+}
+
+body.page-transition-fade.fade-out {
+    opacity: 0;
+    transform: scale(0.96);
+}
+
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
